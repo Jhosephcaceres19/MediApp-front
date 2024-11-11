@@ -1,4 +1,7 @@
+
 export const Article = () => {
+
+
   return (
     <div>
       <article className="max-w-2xl px-6 py-24 mx-auto space-y-12 ">
