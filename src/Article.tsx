@@ -1,3 +1,4 @@
+import { FormUser } from "./components/FormUser";
 
 export const Article = () => {
 
@@ -23,25 +24,10 @@ export const Article = () => {
         <div className="pt-12 border-t border-gray-300">
           <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
             <div className="w-full ">
-              <div className="container flex flex-col flex-wrap content-center justify-center p-4 py-20 mx-auto md:p-10">
-                <h1 className="text-5xl antialiased font-semibold leading-none text-center ">
-                  CITA MEDICA
-                </h1>
-                <p className="pt-2 pb-8 text-xl antialiased text-center ">
-                  Agenda una cita medica...
-                </p>
-                <div className="flex flex-row">
-                  <input
-                    type="text"
-                    placeholder="Nombre completo"
-                    className="w-3/5 p-3 rounded-l-lg sm:w-2/3"
-                  />
-                  <button
-                    type="button"
-                    className="w-2/5 p-3 font-semibold rounded-r-lg sm:w-1/3 bg-sky-400 "
-                  >
-                    Registrar
-                  </button>
+              <div className="container flex flex-col flex-wrap content-center justify-center p-4  mx-auto ">
+                
+                <div className="flex flex-col">
+                  <FormUser/>
                 </div>
               </div>
             </div>

@@ -3,14 +3,14 @@ import api from "../api/api";
 const registerPaciente = async (
   nombre: string,
   apellido: string,
-  fecha_nacimineto: Date,
+  fecha_nacimiento: string,
   correo: string,
   telefono: string
 ) => {
   const response = await api.post("/paciente", {
     nombre,
     apellido,
-    fecha_nacimineto,
+    fecha_nacimiento,
     correo,
     telefono,
   });
@@ -23,7 +23,7 @@ const viewPaciente = async (id: number) => {
 };
 
 const updatePaciente = async (id:number, nombre: string, apellido: string, fecha_nacimiento: Date, correo: string, telefono: string ) =>{
-    const response = await api.put('/pacinete',{
+    const response = await api.put('/paciente',{
         id,
         nombre,
         apellido,
