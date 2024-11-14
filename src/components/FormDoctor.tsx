@@ -47,8 +47,9 @@ export const FormDoctor = () => {
       }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
+      
     >
-      <Form className="flex flex-col gap-2 text-center">
+      <Form className="flex flex-col gap-2 text-center w-72 bg-sky-600/50 p-4">
         <Field
           name="nombre"
           type="text"
@@ -62,7 +63,7 @@ export const FormDoctor = () => {
           placeholder="Ingrese su apellido"
           className="text-center p-2 rounded-md bg-sky-100"
         />
-        <ErrorMessage name="nombre" component="div" className="text-red-500 text-sm" />
+        <ErrorMessage name="apellido" component="div" className="text-red-500 text-sm" />
         <Field
           name="especialidad"
           type="text"
