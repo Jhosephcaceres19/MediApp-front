@@ -1,4 +1,3 @@
-import React from 'react'
 import { App } from '../App'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { User } from '../page/user/User'
@@ -16,7 +15,7 @@ export const Routes = () => {
           element:<User/>
         },
         {
-          path: "/doctor",
+          path: "/doctor:id_medico",
           element:<Doctor/>
         },
         {

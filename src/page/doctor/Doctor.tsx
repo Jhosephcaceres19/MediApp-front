@@ -1,11 +1,7 @@
-import React from "react";
-import { HeaderDoctor } from "./HeaderDoctor";
+import React from 'react'
 
 export const Doctor = () => {
   return (
-    <div>
-      <HeaderDoctor />
-      Bienvenido Doctor
-    </div>
-  );
-};
+    <div>Doctor</div>
+  )
+}

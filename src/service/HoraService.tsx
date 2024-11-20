@@ -4,7 +4,7 @@ import api from "../api/api";
 type DiaSemana = "lunes" | "martes" | "miércoles" | "jueves" | "viernes";
 
 const createHora = async (
-  id: number,
+  
   id_medico: number,
   diaSemana: DiaSemana,
   horarioInicio: string, // Cambiado de 'time' a 'string'
@@ -18,7 +18,7 @@ const createHora = async (
 
   // Estructura de los datos a enviar
   const data = {
-    id,
+    
     id_medico,
     diaSemana,
     horarioInicio,

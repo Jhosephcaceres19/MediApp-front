@@ -7,21 +7,34 @@ const registerMedico = async (
   numero_licencia: string,
   telefono: string
 ) => {
-  const { data } = await api.post("/medico", {
-    nombre,
-    apellido,
-    especialidad,
-    numero_licencia,
-    telefono,
-  });
+  try {
+    const response = await api.post("/medico", {
+      nombre,
+      apellido,
+      especialidad,
+      numero_licencia,
+      telefono,
+    });
+    
+    console.log("Respuesta del servidor:", response);
 
-  return data;
+    return response.data;  
+  } catch (error) {
+    console.error("Error al registrar el médico:", error);
+    throw error;  
+  }
 };
 
 
+
 const viewMedico =async(id: number) =>{
+  try{
+
     const response = await api.get(`/medico/${id}`)
-    return response.data;
+    return response.data
+  }catch(error){
+    console.log("eeror al ver al medico por el id", error)
+  }
 }
 
 const  deleteMedico= async(id: number) =>{
