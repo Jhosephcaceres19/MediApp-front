@@ -1,7 +1,7 @@
 import api from "../api/api";
 
 // Definir el tipo para los días de la semana permitidos
-type DiaSemana = "lunes" | "martes" | "miércoles" | "jueves" | "viernes";
+type DiaSemana = "Lunes" | "Martes" | "Miércoles" | "Jueves" | "Viernes" | "Sabado" | "Otros";
 
 const createHora = async (
   
@@ -11,7 +11,7 @@ const createHora = async (
   horarioFin: string     // Cambiado de 'time' a 'string'
 ) => {
   // Validación para asegurar que `diaSemana` sea uno de los valores permitidos
-  const diasPermitidos: DiaSemana[] = ["lunes", "martes", "miércoles", "jueves", "viernes"];
+  const diasPermitidos: DiaSemana[] = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado" , "Otros"];
   if (!diasPermitidos.includes(diaSemana)) {
     throw new Error("El día de la semana debe ser entre lunes y viernes.");
   }
@@ -42,7 +42,7 @@ const updateHora = async(
     horarioInicio: string,
     horarioFin: string
 )=>{
-    const diasPermitidos: DiaSemana[] = ["lunes", "martes", "miércoles","jueves","viernes"];
+    const diasPermitidos: DiaSemana[] = ["Lunes", "Martes", "Miércoles","Jueves","Viernes","Sabado", "Otros"];
     if(!diasPermitidos.includes(diaSemana)){
         throw new Error("el dia de la semana tiene que ser de lunes a viernes")
     };

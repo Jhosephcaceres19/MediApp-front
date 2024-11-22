@@ -1,9 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 export const HeaderDoctor = () => {
   return (
-    <header className="p-4 ">
+    <header className="p-4 bg-sky-600">
       <div className="container flex justify-between h-16 mx-auto">
         <div className="flex">
           <a
@@ -24,7 +23,7 @@ export const HeaderDoctor = () => {
           </a>
         </div>
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          <Link to="/" className="px-8 py-3 font-semibold rounded ">Salir</Link>
+          <Link to="/" className="px-8 py-3 font-semibold rounded bg-sky-700 hover:bg-sky-200">Salir</Link>
         </div>
         <button className="p-4 lg:hidden">
           <svg

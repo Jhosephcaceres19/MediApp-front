@@ -15,7 +15,7 @@ export const Routes = () => {
           element:<User/>
         },
         {
-          path: "/doctor:id_medico",
+          path: "/doctor",
           element:<Doctor/>
         },
         {

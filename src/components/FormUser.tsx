@@ -77,6 +77,7 @@ const navigate = useNavigate();
           className="text-red-500 text-sm"
         />
 
+        <label htmlFor="">Ingrese la fecha de necimiento</label>
         <Field
           className="text-center p-2 rounded-md bg-sky-100"
           name="fecha_nacimiento"

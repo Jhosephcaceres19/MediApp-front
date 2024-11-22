@@ -10,7 +10,11 @@ export const FormDoctor = () => {
   const validationSchema = Yup.object().shape({
     nombre: Yup.string().required("el nombre es requerido"),
     apellido: Yup.string().required("el apelldio es requerido"),
-    especialidad: Yup.string().required("la especialidad es requerida"),
+    especialidad: Yup.string()
+    .oneOf([
+      "Cirujano","Pediatra","Otros"
+    ], "Seleccionar un tipo valido")
+    .required("la especialidad es requerida"),
     numero_licencia: Yup.string().required(
       "el numero de licencia es requerido"
     ),
@@ -22,6 +26,7 @@ export const FormDoctor = () => {
     { resetForm }: FormikHelpers<MedicoInterface>
   ) => {
     try {
+      console.log("valores enviados", values)
       const { nombre, apellido, especialidad, numero_licencia, telefono } =
         values;
       const response = await MedicoService.registerMedico(
@@ -34,13 +39,14 @@ export const FormDoctor = () => {
       console.log("registro exitoso", response);
 
       alert("Se registro el medico");
-      const id_medico = response.data.id_medico;
       
       resetForm();
-      navigate(`/doctor/${id_medico}`);
+      navigate('/doctor');
     } catch (error) {
       console.log("error al registrar al medico", error);
+      
     }
+    
   };
   return (
     <div className="flex bg-sky-600/50 h-screen items-center justify-center">
@@ -48,7 +54,7 @@ export const FormDoctor = () => {
         initialValues={{
           nombre: "",
           apellido: "",
-          especialidad: "",
+          especialidad: "Otros",
           numero_licencia: "",
           telefono: "",
         }}
@@ -79,11 +85,17 @@ export const FormDoctor = () => {
             className="text-red-500 text-sm"
           />
           <Field
+            as="select"
             name="especialidad"
-            type="text"
+            
             placeholder="Ingrese la especialidad"
             className="text-center p-2 rounded-md bg-sky-100"
-          />
+          >
+            <option value="">Seleccionar una especialidad</option>
+            <option value="Cirujano">Cirujano</option>
+            <option value="Pediatra">Pediatra</option>
+            <option value="Otros">Otros</option>
+          </Field>
           <ErrorMessage
             name="especialidad"
             component="div"
