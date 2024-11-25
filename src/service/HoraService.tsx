@@ -7,8 +7,8 @@ const createHora = async (
   
   id_medico: number,
   diaSemana: DiaSemana,
-  horarioInicio: string, // Cambiado de 'time' a 'string'
-  horarioFin: string     // Cambiado de 'time' a 'string'
+  horarioInicio: string, 
+  horarioFin: string    
 ) => {
   // Validación para asegurar que `diaSemana` sea uno de los valores permitidos
   const diasPermitidos: DiaSemana[] = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sabado" , "Otros"];

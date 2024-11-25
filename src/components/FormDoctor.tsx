@@ -54,7 +54,7 @@ export const FormDoctor = () => {
         initialValues={{
           nombre: "",
           apellido: "",
-          especialidad: "Otros",
+          especialidad: "",
           numero_licencia: "",
           telefono: "",
         }}
